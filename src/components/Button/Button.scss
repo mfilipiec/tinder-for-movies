@@ -1,0 +1,33 @@
+.button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid currentColor;
+  background-color: transparent;
+  flex: 1;
+  font-size: 1.25rem;
+  transition: background-color 0.2s ease-in-out;
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  &__icon {
+    height: 24px;
+
+    &--accept {
+      color: var(--color-accept);
+    }
+    &--reject {
+      color: var(--color-reject);
+    }
+  }
+}

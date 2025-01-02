@@ -1,0 +1,46 @@
+.item {
+  text-align: left;
+  display: flex;
+  gap: 16px;
+
+  &__image {
+    height: 170px;
+    border-radius: 8px;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    line-height: normal;
+    margin: 0;
+    display: -webkit-box;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__rating {
+    display: flex;
+    gap: 4px;
+  }
+  &__rating-icon {
+    height: 20px;
+    color: var(--color-brand);
+  }
+
+  &__summary {
+    font-size: 1rem;
+    margin: 0;
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

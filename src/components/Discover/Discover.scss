@@ -1,0 +1,52 @@
+.discover {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__wrapper {
+    margin: 64px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__icon {
+    height: 64px;
+
+    &--loading {
+      animation: spin 1s linear infinite;
+
+      circle {
+        opacity: 0.25;
+      }
+      path {
+        opacity: 0.75;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: 32px;
+    margin: 0;
+  }
+  &__watchlist {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+}

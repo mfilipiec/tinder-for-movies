@@ -1,0 +1,22 @@
+.tips {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 100px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+
+  &__icon {
+    height: 100px;
+
+    &--accept {
+      color: var(--color-accept);
+    }
+
+    &--reject {
+      color: var(--color-reject);
+    }
+  }
+}
