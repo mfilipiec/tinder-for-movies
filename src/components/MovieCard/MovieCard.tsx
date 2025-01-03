@@ -45,7 +45,7 @@ export default function MovieCard({
       dragConstraints={{ left: 0, right: 0 }}
       onUpdate={handleCardUpdate}
       onDragEnd={handleCardDrag}
-      dragElastic={0.5}
+      dragElastic={0.75}
       className="card"
       key={id}
     >
