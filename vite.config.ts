@@ -3,7 +3,8 @@ import { defineConfig as defineVitestConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 
 const viteConfig = defineViteConfig({
-  plugins: [react()]
+  plugins: [react()],
+  base: '/tinder-for-movies/'
 });
 
 const vitestConfig = defineVitestConfig({
