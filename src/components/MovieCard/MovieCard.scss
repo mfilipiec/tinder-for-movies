@@ -5,7 +5,8 @@
   overflow: hidden;
   aspect-ratio: 2 / 3;
   position: relative;
-  background-color: #000;
+  color: var(--color-white);
+  background-color: var(--color-black);
 
   &__image {
     -webkit-user-drag: none;
@@ -28,7 +29,6 @@
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
-    color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
     background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.75) 80%, rgba(255,255,255,0) 100%);;
   }

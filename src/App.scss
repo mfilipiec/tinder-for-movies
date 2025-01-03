@@ -1,20 +1,25 @@
 :root {
+  --color-white: #ffffff;
+  --color-black: #242424;
+  --color-text: var(--color-white);
+  --color-bg: var(--color-black);
+  --color-brand: #f6a122;
+  --color-main: #fd267a;
+  --color-second: #ff6036;
+  --color-neutral: gray;
+  --color-accept: green;
+  --color-reject: red;
+
   font-family: Inter, Arial, sans-serif;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--color-text);
+  background-color: var(--color-bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  --color-brand: #f6a122;
-  --color-main: #fd267a;
-  --color-second: #ff6036;
-  --color-accept: green;
-  --color-reject: red;
 }
 
 *, *::before, *::after {
@@ -26,7 +31,7 @@ body {
   line-height: 1.5;
 }
 
-img, picture, svg {
+img, svg {
   display: block;
   max-width: 100%;
 }
@@ -47,13 +52,7 @@ img, picture, svg {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+    --color-text: var(--color-black);
+    --color-bg: var(--color-white);
   }
 }
