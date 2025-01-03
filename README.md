@@ -3,6 +3,8 @@
 Just a simple React app like Tinder but for movies.
 Created as a task for Frontend Developer at Pragmatic Coders.
 
+You can see the app in action here: https://filipiec.github.io/tinder-for-movies/
+
 ## Tech Stack
 
 - React
