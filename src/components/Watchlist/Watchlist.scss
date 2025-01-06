@@ -1,8 +1,19 @@
-.item {
-  text-align: left;
+.watchlist {
   display: flex;
-  gap: 16px;
-  color: var(--color-text);
+  flex-direction: column;
+  gap: 32px;
+
+  &__header {
+    font-size: 32px;
+    margin: 0;
+  }
+
+  &__item {
+    text-align: left;
+    display: flex;
+    gap: 16px;
+    color: var(--color-text);
+  }
 
   &__image {
     height: 170px;

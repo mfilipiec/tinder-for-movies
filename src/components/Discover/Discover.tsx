@@ -6,7 +6,7 @@ import DiscoverControls from '../DiscoverControls/DiscoverControls';
 import Tips from '../Tips/Tips';
 import NoMoviesIcon from '../../icons/NoMoviesIcon';
 import LoadingIcon from '../../icons/LoadingIcon';
-import MovieListItem from '../MovieListItem/MovieListItem';
+import Watchlist from '../Watchlist/Watchlist';
 
 export type Movie = {
   id: string;
@@ -99,12 +99,7 @@ export default function Discover() {
             <NoMoviesIcon className="discover__icon" />
             No more movies to discoverx
           </p>
-          <div className="discover__watchlist">
-            <h2 className="discover__title">Your watchlist:</h2>
-            {watchlist.map((movie) => (
-              <MovieListItem key={movie.id} movie={movie} />
-            ))}
-          </div>
+          <Watchlist list={watchlist} />
         </>
       )}
     </main>
