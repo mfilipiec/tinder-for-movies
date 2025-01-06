@@ -55,11 +55,9 @@ export default function Discover() {
         }
 
         const newMovies = movies[page]?.list || [];
-        if (page === 0) {
-          setDiscoverStack(newMovies);
-        } else {
-          setDiscoverStack((prevStack) => [...(prevStack || []), ...newMovies]);
-        }
+        setDiscoverStack((prevStack = []) =>
+          page === 0 ? newMovies : [...prevStack, ...newMovies]
+        );
         setCurrentPage(page);
         setIsLoading(false);
       }, 500);
@@ -75,20 +73,23 @@ export default function Discover() {
     }
   }, [discoverStack, currentPage, fetchMovies, isLoading]);
 
-  const currentMovie = discoverStack?.[0];
-
-  return (
-    <main className="discover">
-      {discoverStack === undefined ? (
+  if (discoverStack === undefined)
+    return (
+      <main className="discover">
         <p className="discover__wrapper">
           <LoadingIcon className="discover__icon discover__icon--loading" />
           Loading movies...
         </p>
-      ) : currentMovie ? (
+      </main>
+    );
+
+  return (
+    <main className="discover">
+      {discoverStack?.[0] ? (
         <>
           <Tips />
           <MovieCard
-            movie={currentMovie}
+            movie={discoverStack?.[0]}
             handleDiscoverStack={handleDiscoverStack}
           />
           <DiscoverControls handleDiscoverStack={handleDiscoverStack} />
@@ -97,7 +98,7 @@ export default function Discover() {
         <>
           <p className="discover__wrapper">
             <NoMoviesIcon className="discover__icon" />
-            No more movies to discoverx
+            No more movies to discover
           </p>
           <Watchlist list={watchlist} />
         </>
