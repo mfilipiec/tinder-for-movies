@@ -29,20 +29,20 @@ export default function Discover() {
   const handleDiscoverStack = useCallback<HandleDiscoverStackTypes>(
     (type) => {
       const currentMovie = discoverStack?.[0];
+
+      // Mocked backend gets notified of the user's decision.
       console.log(`User ${type}ed the movie with id: ${currentMovie?.id}`);
 
       if (currentMovie && type === 'accept') {
         setWatchlist((prevWatchlist) => [...prevWatchlist, currentMovie]);
       }
 
-      setDiscoverStack((prevStack) =>
-        prevStack && prevStack.length > 1 ? prevStack.slice(1) : []
-      );
+      setDiscoverStack((prevStack) => prevStack?.slice(1) || []);
     },
     [discoverStack]
   );
 
-  // Fake API call
+  // Fake API call from mocked backend that returns data on GET request.
   const fetchMovies = useCallback(
     (page: number) => {
       if (isLoading) return;
@@ -70,10 +70,8 @@ export default function Discover() {
   // Technical requirement: "Should take into consideration performance of a very long movie list"
   // Solution: Loading the movie list in parts (for example using API-side paging) when the number of movies in the stack decreases
   useEffect(() => {
-    if (discoverStack === undefined) {
-      fetchMovies(currentPage);
-    } else if (discoverStack && discoverStack.length < 5 && !isLoading) {
-      fetchMovies(currentPage + 1);
+    if ((!discoverStack || discoverStack.length < 5) && !isLoading) {
+      fetchMovies(currentPage + (discoverStack ? 1 : 0));
     }
   }, [discoverStack, currentPage, fetchMovies, isLoading]);
 
@@ -99,7 +97,7 @@ export default function Discover() {
         <>
           <p className="discover__wrapper">
             <NoMoviesIcon className="discover__icon" />
-            No more movies to discover
+            No more movies to discoverx
           </p>
           <div className="discover__watchlist">
             <h2 className="discover__title">Your watchlist:</h2>
