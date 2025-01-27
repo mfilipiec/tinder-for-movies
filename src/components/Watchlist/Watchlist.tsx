@@ -1,9 +1,9 @@
 import './Watchlist.scss';
 import StarIcon from '../../icons/StarIcon';
-import { Movie } from '../Discover/Discover';
 import { motion } from 'motion/react';
+import { Movies } from '../../data/fetchMovies';
 
-export default function MovieListItem({ list }: { list: Movie[] }) {
+export default function Watchlist({ list }: { list: Movies }) {
   return (
     <div className="watchlist">
       <motion.h2

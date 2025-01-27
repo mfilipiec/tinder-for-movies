@@ -11,12 +11,14 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.65.0",
     "motion": "^11.15.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
+    "@tanstack/eslint-plugin-query": "^5.65.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^14.5.2",

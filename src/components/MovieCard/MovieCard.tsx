@@ -1,8 +1,9 @@
 import './MovieCard.scss';
 import { useState } from 'react';
 import { motion, useMotionValue, useTransform } from 'motion/react';
-import { HandleDiscoverStackTypes, Movie } from '../Discover/Discover';
+import { HandleDiscoverStackTypes } from '../Discover/Discover';
 import StarIcon from '../../icons/StarIcon';
+import { Movie } from '../../data/fetchMovies';
 
 export default function MovieCard({
   movie,
