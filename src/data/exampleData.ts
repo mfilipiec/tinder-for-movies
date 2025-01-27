@@ -1,8 +1,7 @@
 // Movies with images were taken from tmdb.org database.
 const movies = [
   {
-    page: 0,
-    list: [
+    movies: [
       {
         id: '1005331',
         imageURL:
@@ -101,11 +100,11 @@ const movies = [
         release_date: '2024-11-25',
         genres: ['Animation', 'Mystery', 'Science Fiction', 'Action']
       }
-    ]
+    ],
+    hasMore: true,
   },
   {
-    page: 1,
-    list: [
+    movies: [
       {
         id: '1156593',
         imageURL:
@@ -196,11 +195,11 @@ const movies = [
           "In the land of Oz, ostracized and misunderstood green-skinned Elphaba is forced to share a room with the popular aristocrat Glinda at Shiz University, and the two's unlikely friendship is tested as they begin to fulfill their respective destinies as Glinda the Good and the Wicked Witch of the West.",
         rating: 7.4
       }
-    ]
+    ],
+    hasMore: true,
   },
   {
-    page: 2,
-    list: [
+    movies: [
       {
         id: '1035048',
         imageURL:
@@ -228,7 +227,8 @@ const movies = [
           'A fading celebrity decides to use a black market drug, a cell-replicating substance that temporarily creates a younger, better version of herself.',
         rating: 7.2
       }
-    ]
+    ],
+    hasMore: false
   }
 ];
 
